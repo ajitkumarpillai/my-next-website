@@ -1,0 +1,301 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navBrand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-foreground);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover, .dropbtn:hover {
+  color: var(--color-foreground);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: var(--color-white);
+  min-width: 220px;
+  box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.1);
+  z-index: 10;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  top: 100%;
+  margin-top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0;
+}
+
+.dropdownContent::before {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+}
+
+.dropdownContent a {
+  color: var(--color-foreground);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  display: block;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdownContent a:last-child {
+  border-bottom: none;
+}
+
+.dropdownContent a:hover {
+  background-color: var(--color-background);
+  color: var(--color-ayurveda-primary);
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+  animation: fadeUp 0.2s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.btnNav {
+  background: var(--color-foreground);
+  color: var(--color-white) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btnNav:hover {
+  transform: translateY(-2px);
+  background: var(--color-ayurveda-primary);
+}
+
+.introSection {
+  padding: 5rem 5%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.textBlock {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color-foreground);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.bodyText {
+  font-size: 1.125rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.featureBox {
+  background: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-ayurveda-primary);
+  margin-bottom: 1.5rem;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+}
+
+.featureText {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.insuranceSection {
+  background-color: var(--color-foreground);
+  padding: 4rem 5%;
+  margin-top: 5rem;
+  color: var(--color-white);
+}
+
+.insuranceContent {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.insuranceIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-ayurveda-accent);
+  flex-shrink: 0;
+}
+
+.insuranceText h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.insuranceText p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.insuranceBadge {
+  background: var(--color-ayurveda-accent);
+  color: var(--color-foreground);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .insuranceContent {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.resourceCTA {
+  background-color: var(--color-background);
+  padding: 6rem 5%;
+  text-align: center;
+}
+
+.resourceContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.resourceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.resourceIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-ayurveda-primary);
+}
+
+.resourceCTA h2 {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: var(--color-foreground);
+}
+
+.resourceCTA p {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.resourceBtn {
+  display: inline-block;
+  background: var(--color-foreground);
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.resourceBtn:hover {
+  background: var(--color-ayurveda-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  /* existing rules */
+}

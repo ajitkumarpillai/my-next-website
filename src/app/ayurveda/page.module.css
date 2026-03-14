@@ -1,0 +1,141 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--color-ayurveda-primary);
+}
+
+.brand {
+  font-weight: 500;
+  color: var(--color-ayurveda-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero {
+  background-color: #e2f0e2; /* 10% lighter Sage Green */
+  color: var(--color-ayurveda-primary);
+  padding: 8rem 5%;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--color-ayurveda-primary);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 1;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 5rem 5%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.serviceCard {
+  background: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  border-color: var(--color-ayurveda-primary);
+  box-shadow: 0 10px 30px rgba(45, 90, 39, 0.05); /* Match earthy green */
+}
+
+.icon {
+  color: var(--color-ayurveda-primary);
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+}
+
+.serviceDesc {
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.serviceLink {
+  display: inline-block;
+  color: var(--color-ayurveda-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--color-ayurveda-primary);
+  padding-bottom: 0.2rem;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 5rem 5%;
+  background-color: var(--color-ayurveda-accent);
+  color: var(--color-white);
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--color-white);
+  color: var(--color-ayurveda-primary);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+}

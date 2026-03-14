@@ -1,0 +1,71 @@
+.tooltipContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: help;
+  border-bottom: 1px dashed var(--color-muted);
+}
+
+.triggerText {
+  color: var(--color-foreground);
+  font-weight: 500;
+}
+
+.iconInfo {
+  color: var(--color-muted);
+}
+
+.tooltipBox {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 250px;
+  background-color: var(--color-foreground);
+  color: var(--color-white);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  text-align: left;
+  animation: tooltipFade 0.2s ease-out forwards;
+}
+
+.tooltipBox::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-foreground) transparent transparent transparent;
+}
+
+.tooltipTerm {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  color: #fbbf24; /* highlight term */
+}
+
+.tooltipDef {
+  font-weight: 400;
+  color: #e5e7eb;
+}
+
+@keyframes tooltipFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 5px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

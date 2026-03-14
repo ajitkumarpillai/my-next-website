@@ -1,0 +1,165 @@
+.bar {
+  background-color: var(--color-ayurveda-accent);
+  color: var(--color-foreground);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0 5%;
+  z-index: 1000;
+}
+
+.desktopOnly {
+  display: flex;
+  width: 100%;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  white-space: nowrap;
+}
+
+.boldConcierge {
+  font-weight: 800;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.desktopCallBtn {
+  background: #000;
+  color: var(--color-ayurveda-accent);
+  text-decoration: none;
+  padding: 0.3rem 1rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.desktopCallBtn:hover {
+  transform: scale(1.05);
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contactInfo {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mobile Action Dock */
+@media (max-width: 768px) {
+  .desktopOnly {
+    display: none;
+  }
+  
+  .mobileOnly {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--color-ayurveda-accent);
+    color: var(--color-foreground);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    z-index: 2000;
+    align-items: stretch;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .tickerArea {
+    width: 65%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .ticker {
+    display: flex;
+    white-space: nowrap;
+    animation: tickerScroll 30s linear infinite;
+    gap: 4rem;
+  }
+
+  .tickerContent {
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .actionArea {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .callButton {
+    background: #000;
+    color: var(--color-ayurveda-accent);
+    text-decoration: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  @keyframes tickerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}

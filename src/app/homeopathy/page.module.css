@@ -1,0 +1,131 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--color-homeopathy-primary);
+}
+
+.brand {
+  font-weight: 500;
+  color: var(--color-homeopathy-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero {
+  background-color: #daeaf6; /* 10% lighter Clinical Blue */
+  color: var(--color-homeopathy-primary);
+  padding: 8rem 5%;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--color-homeopathy-primary);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 1;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 5rem 5%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.serviceCard {
+  background: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  border-color: var(--color-homeopathy-primary);
+  box-shadow: 0 10px 30px rgba(0, 128, 128, 0.05); /* Match Medical Teal */
+}
+
+.icon {
+  color: var(--color-homeopathy-primary);
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+}
+
+.serviceDesc {
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 5rem 5%;
+  background-color: var(--color-homeopathy-accent);
+  color: var(--color-foreground);
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--color-foreground);
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+}

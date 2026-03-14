@@ -1,65 +1,148 @@
+import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, ShieldCheck, Activity, Leaf, MapPin, Phone, Mail, Facebook, Instagram, Navigation, Car, CarFront, Shield } from "lucide-react";
+import styles from "./page.module.css";
+import HeroSlider from "@/components/HeroSlider";
+import DoctorCard from "@/components/DoctorCard";
+import { ayurvedaDoctors, homeopathyDoctors } from "@/data/doctors";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className={styles.container}>
+      {/* 1. Luxury Hero Section */}
+      <section className={styles.hero}>
+        <HeroSlider />
+        <div className={styles.heroOverlay}></div>
+        <div className={styles.heroContent}>
+          <span className={styles.heroSubtitle}>Abu Dhabi's Premium Holistic Destination</span>
+          <h1 className={styles.heroTitle}>The Epitome of Integrated Excellence</h1>
+          <p className={styles.heroText}>
+            Where ancient healing wisdom meets modern clinical precision in a 5-star luxury medical sanctuary.
           </p>
+          <div className={styles.heroActions}>
+            <Link href="/booking" className={styles.btnPrimary}>
+              Book a Consultation
+            </Link>
+            <a href="#wings" className={styles.btnSecondary}>
+              Explore Ayurveda & Homeopathy
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 2. Wing Selection (The "Split" reimagined below the fold) */}
+      <section id="wings" className={styles.wingsSection}>
+        <div className={styles.sectionHeader}>
+          <h2>Choose Your Path to Healing</h2>
+          <p>We feature two strictly segregated, world-class medical disciplines tailored to your specific needs.</p>
         </div>
-      </main>
-    </div>
+        
+        <div className={styles.wingsGrid}>
+          {/* Ayurveda Card */}
+          <Link href="/ayurveda" className={`${styles.wingCard} ${styles.cardAyurveda}`}>
+            <div className={styles.cardOverlay}></div>
+            <div className={styles.cardContent}>
+              <Leaf className={styles.cardIcon} />
+              <h3>Ayurveda</h3>
+              <p>Authentic Panchakarma detox, Advanced athletic recovery protocols, and traditional therapeutic healing.</p>
+              <span className={styles.cardAction}>
+                Explore Ayurveda <ArrowRight size={16} />
+              </span>
+            </div>
+          </Link>
+
+          {/* Homeopathy Card */}
+          <Link href="/homeopathy" className={`${styles.wingCard} ${styles.cardHomeopathy}`}>
+            <div className={styles.cardOverlay}></div>
+            <div className={styles.cardContent}>
+              <Activity className={styles.cardIcon} />
+              <h3>Homeopathy</h3>
+              <p>Constitutional prescribing, chronic disease management, and pediatric allergy focus.</p>
+              <span className={styles.cardAction}>
+                Explore Homeopathy <ArrowRight size={16} />
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* 3. The Sanctuary Experience (Trust Engine) */}
+      <section className={styles.trustSection}>
+        <div className={styles.trustIntro}>
+          <h2>Uncompromising Luxury & Privacy</h2>
+          <p>Licensed by the Department of Health (DOH #MF-90210), Wellnest Care guarantees clinical excellence wrapped in 5-star hospitality.</p>
+        </div>
+        
+        <div className={styles.featuresGrid}>
+          <div className={styles.featureBox}>
+            <ShieldCheck className={styles.featureIcon} />
+            <h4>7 Premium Treatment Rooms</h4>
+            <p>Featuring hospital-grade sterilization and acoustic isolation for ultimate peace.</p>
+          </div>
+          <div className={styles.featureBox}>
+            <div className={styles.wingBadgeOnyx}>Onyx Wing</div>
+            <h4>Exclusive Male Privacy</h4>
+            <p>A dedicated, distraction-free environment tailored specifically for our male patients.</p>
+          </div>
+          <div className={styles.featureBox}>
+            <div className={styles.wingBadgeEmerald}>Emerald Wing</div>
+            <h4>Exclusive Female Privacy</h4>
+            <p>A serene, secure sanctuary operated by female specialists for our female patients.</p>
+          </div>
+          <div className={styles.featureBox}>
+            <div className={styles.wingBadgeEmerald}>Onyx + Emerald</div>
+            <h4>Complimentary Valet</h4>
+            <p>Seamless arrival and departure at our front door, allowing you to focus entirely on your healing.</p>
+          </div>
+          <div className={styles.featureBox}>
+            <CarFront className={styles.featureIcon} />
+            <h4>Pick & Drop Transport</h4>
+            <p>Restricted mobility? We offer complimentary transport within a 10km radius to ensure you get the care you need.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Insurance Section */}
+      <section className={styles.insuranceSection}>
+        <div className={styles.insuranceContent}>
+          <Shield className={styles.insuranceIcon} />
+          <div className={styles.insuranceText}>
+            <h2>Insurance Partners</h2>
+            <p>Providing seamless care with all leading insurance providers in the UAE.</p>
+          </div>
+          <div className={styles.insuranceBadge}>
+            Reimbursement Based Coverage
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Clinical Leadership Highlight */}
+      <section className={styles.leadershipSection}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.heroSubtitle} style={{ display: 'block', marginBottom: '1rem' }}>Clinical Excellence</span>
+          <h2>Governed by Licensed Expertise</h2>
+          <p>Meet the medical practitioners behind our dedicated therapeutic wings.</p>
+        </div>
+
+        <div className={styles.rowAyurveda}>
+          {ayurvedaDoctors.map((doc, idx) => (
+            <DoctorCard key={idx} doctor={doc} />
+          ))}
+        </div>
+
+        <div className={styles.rowHomeopathy}>
+          {homeopathyDoctors.map((doc, idx) => (
+            <DoctorCard key={idx} doctor={doc} />
+          ))}
+        </div>
+
+        <div className={styles.ctaWrapper}>
+          <Link href="/team" className={styles.btnLarge}>
+            Meet Our Full Medical Board <ArrowRight size={20} />
+          </Link>
+        </div>
+      </section>
+
+    </main>
   );
 }

@@ -1,0 +1,90 @@
+.heroContainer {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  bottom: 12%;
+  left: 8%;
+  z-index: 2;
+  color: var(--color-white);
+  max-width: 600px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 5%;
+  left: 8%;
+  display: flex;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.indicator {
+  width: 40px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.activeIndicator {
+  background-color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    height: 60vh;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}

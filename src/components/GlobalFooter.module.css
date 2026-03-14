@@ -1,0 +1,105 @@
+.footer {
+  background-color: var(--color-foreground);
+  color: var(--color-white);
+  padding: 5rem 5% 2rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr 1.5fr;
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto 4rem;
+}
+
+.footerBrand h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-ayurveda-accent);
+}
+
+.footerBrand p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  color: var(--color-white);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--color-ayurveda-accent);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.footerMap {
+  width: 100%;
+}
+
+.footerLinks h4, .footerContact h4 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footerLinks a {
+  display: block;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: var(--color-ayurveda-accent);
+}
+
+.footerContact p {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.contactIcon {
+  color: var(--color-ayurveda-accent);
+}
+
+.footerBottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

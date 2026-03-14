@@ -1,0 +1,199 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--color-foreground);
+}
+
+.brand {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header {
+  text-align: center;
+  padding: 5rem 5% 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.contentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 0 5% 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resourceSection h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: var(--color-foreground);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.icon {
+  color: var(--color-ayurveda-primary);
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resourceCard {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.resourceCard:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.cardInfo h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.cardInfo p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.downloadBtn, .quizBtn {
+  background: var(--color-foreground);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.downloadBtn:hover, .quizBtn:hover {
+  transform: translateY(-2px);
+  background: var(--color-ayurveda-primary);
+}
+
+.glossaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.glossaryItem {
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.glossaryItem strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-foreground);
+}
+
+.glossaryItem p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .resourceCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.searchContainer {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--color-white);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-ayurveda-primary);
+  box-shadow: 0 0 0 4px rgba(26, 54, 29, 0.05);
+}
+
+.noResults {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}

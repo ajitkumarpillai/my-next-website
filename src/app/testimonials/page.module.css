@@ -1,0 +1,206 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--color-foreground);
+}
+
+.brand {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header {
+  text-align: center;
+  padding: 5rem 5% 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 0 5% 5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.testimonialCard {
+  background: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.quoteIcon {
+  color: var(--color-border);
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  color: #fbbf24; /* Warm gold for stars */
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.quoteText {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-foreground);
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.patientMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+  margin-top: auto;
+}
+
+.patientInfo strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.conditionMeta {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.treatmentInfo {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-background);
+  color: var(--color-muted);
+}
+
+.testimonialCard:nth-child(even) .badge {
+  background: #f0fdf4; /* Very light green */
+  color: #166534;
+}
+
+.testimonialCard:nth-child(odd) .badge {
+  background: #f0f9ff; /* Very light blue */
+  color: #0369a1;
+}
+
+.treatmentName {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 5rem 5%;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  color: var(--color-muted);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--color-foreground);
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .patientMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .treatmentInfo {
+    text-align: left;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,126 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: inherit; /* Allow parent to control padding transition */
+  transition: padding 0.4s ease;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navBrand {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-foreground);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks a, .dropbtn {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-foreground); /* Rich Onyx */
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.navLinks a:hover, .dropbtn:hover {
+  color: var(--color-ayurveda-accent); /* Gold Accent */
+  opacity: 1;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: var(--color-white);
+  min-width: 220px;
+  box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.1);
+  z-index: 100;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  top: 100%;
+  margin-top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0;
+}
+
+.dropdownContent::before {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+}
+
+.dropdownContent a {
+  color: var(--color-foreground);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  display: block;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdownContent a:last-child {
+  border-bottom: none;
+}
+
+.dropdownContent a:hover {
+  background-color: var(--color-background);
+  color: var(--color-ayurveda-primary);
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+  animation: fadeUp 0.2s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.btnNav {
+  background: var(--color-foreground);
+  color: var(--color-white) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btnNav:hover {
+  transform: translateY(-2px);
+  background: var(--color-ayurveda-primary);
+}
+
+@media (max-width: 1024px) {
+  .navLinks {
+    display: none;
+  }
+}

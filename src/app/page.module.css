@@ -1,0 +1,460 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* 1. Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: var(--color-foreground); /* Fallback */
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(17,17,17,0.4), rgba(17,17,17,0.8));
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+  color: var(--color-white);
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heroSubtitle {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-ayurveda-accent); /* Gold */
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.heroText {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btnPrimary {
+  background-color: var(--color-ayurveda-accent); /* Gold */
+  color: var(--color-foreground);
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: #e5b900;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: var(--color-white);
+}
+
+/* 2. Wings Section */
+.wingsSection {
+  padding: 4rem 5% 6rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.75rem;
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+}
+
+.sectionHeader p {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+.wingsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.wingCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 500px;
+  padding: 3rem;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
+}
+
+.wingCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.cardAyurveda {
+  background-image: url('/ayurveda-landing.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.cardHomeopathy {
+  background-image: url('/homeopathy-landing.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.4) 50%, rgba(17,17,17,0.1) 100%);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.cardAyurveda .cardOverlay {
+  background: linear-gradient(to top, rgba(26,54,29,0.95) 0%, rgba(26,54,29,0.5) 50%, rgba(17,17,17,0.1) 100%); /* Forest Green tint */
+}
+
+.cardHomeopathy .cardOverlay {
+  background: linear-gradient(to top, rgba(15,59,74,0.95) 0%, rgba(15,59,74,0.5) 50%, rgba(17,17,17,0.1) 100%); /* Sapphire tint */
+}
+
+.wingCard:hover .cardOverlay {
+  opacity: 0.9;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  color: var(--color-white);
+}
+
+.cardIcon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 1.5rem;
+  color: var(--color-ayurveda-accent);
+}
+
+.cardHomeopathy .cardIcon {
+  color: var(--color-homeopathy-accent);
+}
+
+.cardContent h3 {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardContent p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ayurveda-accent);
+  transition: gap 0.3s ease;
+}
+
+.cardHomeopathy .cardAction {
+  color: var(--color-homeopathy-accent);
+}
+
+.wingCard:hover .cardAction {
+  gap: 1rem;
+}
+
+
+/* 3. Trust Section */
+.trustSection {
+  background-color: var(--color-white);
+  padding: 4rem 5% 6rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.trustIntro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.trustIntro h2 {
+  font-size: 2.5rem;
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+}
+
+.trustIntro p {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.featureBox {
+  padding: 3rem 2rem;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  text-align: center;
+}
+
+.featureIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-ayurveda-primary);
+  margin: 0 auto 1.5rem;
+}
+
+.wingBadgeOnyx, .wingBadgeEmerald {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.wingBadgeOnyx {
+  background-color: #111;
+  color: #D4AF37;
+}
+
+.wingBadgeEmerald {
+  background-color: #1A361D;
+  color: #fff;
+}
+
+.featureBox h4 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--color-foreground);
+}
+
+.featureBox p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* 4. Insurance Section */
+.insuranceSection {
+  background-color: var(--color-foreground);
+  padding: 1.5rem 5%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.insuranceContent {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: var(--color-white);
+}
+
+.insuranceIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-ayurveda-accent);
+  flex-shrink: 0;
+}
+
+.insuranceText h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.insuranceText p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.insuranceBadge {
+  background: var(--color-ayurveda-accent);
+  color: var(--color-foreground);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .insuranceContent {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* 5. Clinical Leadership Section */
+.leadershipSection {
+  padding: 4rem 5% 6rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.rowAyurveda, .rowHomeopathy {
+  display: grid;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.rowAyurveda {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rowHomeopathy {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .rowAyurveda, .rowHomeopathy {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rowAyurveda, .rowHomeopathy {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ctaWrapper {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.btnLarge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-foreground);
+  color: var(--color-white);
+  padding: 1.25rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.btnLarge:hover {
+  background-color: var(--color-ayurveda-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  .wingsGrid {
+    grid-template-columns: 1fr;
+  }
+  .wingCard {
+    height: 400px;
+  }
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .heroActions {
+    flex-direction: column;
+  }
+}

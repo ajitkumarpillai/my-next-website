@@ -1,0 +1,40 @@
+.headerStack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure content doesn't jump when header becomes fixed */
+/* The header is fixed from the start now to avoid jitters */
+
+.utilityWrapper {
+  transition: all 0.4s ease;
+  height: 40px;
+  overflow: hidden;
+}
+
+.scrolled .utilityWrapper {
+  height: 32px; /* Thinner on scroll */
+  background-color: rgba(var(--color-ayurveda-accent-rgb), 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.navWrapper {
+  transition: all 0.4s ease;
+  background: var(--color-white);
+  padding: 1.5rem 5%;
+}
+
+.scrolled .navWrapper {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  padding: 0.8rem 5%;
+}

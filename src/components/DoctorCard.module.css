@@ -1,0 +1,167 @@
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background-color: #f8fafc;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 0.25;
+}
+
+/* Ayurveda Variant */
+.ayurveda .overlay {
+  background: linear-gradient(to bottom, transparent, var(--color-ayurveda-primary));
+}
+
+.ayurveda .cardBody {
+  background-color: #e2f0e2; /* 10% lighter green */
+  border-top: 2px solid var(--color-ayurveda-primary);
+}
+
+.ayurveda .role {
+  color: var(--color-ayurveda-primary);
+}
+
+.ayurveda .expertiseItem::before {
+  color: var(--color-ayurveda-accent);
+}
+
+/* Homeopathy Variant */
+.homeopathy .overlay {
+  background: linear-gradient(to bottom, transparent, #2c4a5c);
+}
+
+.homeopathy .cardBody {
+  background-color: #daeaf6; /* 10% lighter blue */
+  border-top: 2px solid #2c4a5c;
+}
+
+.homeopathy .role {
+  color: #2c4a5c;
+}
+
+.homeopathy .expertiseItem::before {
+  color: #5bb5ab;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cardBody {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: 0.25rem;
+}
+
+.role {
+  font-size: 1rem;
+  color: var(--color-ayurveda-primary);
+  font-weight: 500;
+  display: block;
+}
+
+.details {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.qualification {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.expertise {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expertiseItem {
+  font-size: 0.95rem;
+  color: var(--color-foreground);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.expertiseItem::before {
+  content: "•";
+  color: var(--color-ayurveda-accent);
+  font-weight: bold;
+}
+
+.cardFooter {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.verificationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #166534;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.shieldIcon {
+  color: #22c55e;
+}
