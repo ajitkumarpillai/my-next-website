@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, Activity, Leaf, MapPin, Phone, Mail, Facebook, Instagram, Navigation, Car, CarFront, Shield } from "lucide-react";
+import { ArrowRight, ShieldCheck, Activity, Leaf, MapPin, Phone, Mail, Facebook, Instagram, Navigation, Car, CarFront, Shield, Sparkles, Award } from "lucide-react";
 import styles from "./page.module.css";
 import HeroSlider from "@/components/HeroSlider";
 import DoctorCard from "@/components/DoctorCard";
@@ -27,6 +27,39 @@ export default function Home() {
               Explore Ayurveda & Homeopathy
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* 1.5. About Summary Section */}
+      <section className={styles.aboutSummary}>
+        <div className={styles.aboutContent}>
+          <span className={styles.heroSubtitle} style={{ display: 'block', marginBottom: '1rem' }}>Our Heritage & Philosophy</span>
+          <h2 className={styles.aboutTitle}>Ancient Wisdom. Clinical Precision.</h2>
+          <p className={styles.aboutBrief}>
+            Wellnest Care is Abu Dhabi’s premier clinical sanctuary, where the timeless healing legacy of the East meets modern medical standards. We specialize in root-cause recovery, restoring your body’s innate intelligence through award-winning expertise.
+          </p>
+          
+          <div className={styles.aboutGrid}>
+            <div className={styles.aboutItem}>
+              <Sparkles className={styles.aboutIcon} />
+              <h4>Profound Healing</h4>
+              <p>Moving beyond symptom management to resolve chronic conditions at their source.</p>
+            </div>
+            <div className={styles.aboutItem}>
+              <MapPin className={styles.aboutIcon} />
+              <h4>Clinical Sanctuary</h4>
+              <p>5-star medical facilities with dedicated, private wings for absolute comfort.</p>
+            </div>
+            <div className={styles.aboutItem}>
+              <Award className={styles.aboutIcon} />
+              <h4>Global Expertise</h4>
+              <p>Governed by licensed doctors and master therapists with decades of UAE experience.</p>
+            </div>
+          </div>
+
+          <Link href="/about" className={styles.btnText}>
+            Read Our Full Story <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
