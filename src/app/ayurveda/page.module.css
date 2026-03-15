@@ -61,55 +61,169 @@
   color: var(--color-muted);
 }
 
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  padding: 5rem 5%;
-  max-width: var(--max-width);
+/* New Sections Layout */
+.sectionContainer {
+  padding: 6rem 5%;
+  max-width: var(--max-width, 1200px);
   margin: 0 auto;
 }
 
-.serviceCard {
-  background: var(--color-white);
-  padding: 2.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
-  transition: all 0.3s ease;
+.altBackground {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  max-width: 100%;
 }
 
-.serviceCard:hover {
-  border-color: var(--color-ayurveda-primary);
-  box-shadow: 0 10px 30px rgba(45, 90, 39, 0.05); /* Match earthy green */
+.sectionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
 }
 
-.icon {
+.sectionIcon {
   color: var(--color-ayurveda-primary);
-  width: 36px;
-  height: 36px;
-  margin-bottom: 1.5rem;
-}
-
-.serviceTitle {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--color-foreground);
+  width: 40px;
+  height: 40px;
   margin-bottom: 1rem;
 }
 
-.serviceDesc {
-  color: var(--color-muted);
-  line-height: 1.6;
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-foreground);
   margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
-.serviceLink {
-  display: inline-block;
-  color: var(--color-ayurveda-primary);
+.sectionIntro {
+  color: var(--color-muted);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Conditions Grid */
+.conditionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.conditionCard {
+  background: #f2f8f2; /* Soft pastel green */
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(45, 90, 39, 0.1); /* Subtle green border */
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.conditionCard:hover {
+  border-color: var(--color-ayurveda-primary);
+  box-shadow: 0 10px 30px rgba(45, 90, 39, 0.08);
+  transform: translateY(-2px);
+  background: #eaf4eb; /* Slightly deeper pastel on hover */
+}
+
+.conditionName {
+  font-size: 1.25rem;
   font-weight: 500;
-  font-size: 0.875rem;
-  border-bottom: 1px solid var(--color-ayurveda-primary);
-  padding-bottom: 0.2rem;
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(45, 90, 39, 0.15); /* light sage line */
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.conditionList {
+  color: var(--color-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Therapies List/Grid */
+.therapiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+}
+
+.therapyItem {
+  padding: 1.5rem;
+  border-left: 3px solid #d4ebce;
+  transition: all 0.3s ease;
+}
+
+.therapyItem:hover {
+  border-left-color: var(--color-ayurveda-primary);
+  background-color: #f7fdf7; /* very light hint of green */
+}
+
+.therapyName {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-ayurveda-primary);
+  margin-bottom: 0.5rem;
+}
+
+.therapyDesc {
+  color: var(--color-foreground);
+  opacity: 0.8;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Pathways Grid */
+.pathwaysGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.pathwayCard {
+  position: relative;
+  background: #eff6ef; /* Pleasant pastel green */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(45, 90, 39, 0.1);
+  transition: all 0.4s ease;
+}
+
+.pathwayCard:hover {
+  box-shadow: 0 12px 30px rgba(45, 90, 39, 0.08); /* deeper green shadow */
+  transform: translateY(-4px);
+  background: #eaf4eb; /* Hover state pastel */
+}
+
+.pathwayCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-ayurveda-primary);
+}
+
+.pathwayContent {
+  padding: 2.5rem 2rem;
+}
+
+.pathwayName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.pathwayDesc {
+  color: var(--color-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .ctaSection {
