@@ -7,6 +7,7 @@ export default function GlobalNav() {
       <Link href="/" className={styles.navBrand} style={{ textDecoration: 'none' }}>Wellnest Care</Link>
       <div className={styles.navLinks}>
         <Link href="/">Home</Link>
+        <Link href="/about">About Us</Link>
         <div className={styles.dropdown}>
           <Link href="/ayurveda" className={styles.dropbtn}>Ayurveda ▼</Link>
           <div className={styles.dropdownContent}>
